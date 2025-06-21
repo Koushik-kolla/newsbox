@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewsBox</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="header">
+    <h1>NewsBox</h1>
+    <input type="text" id="searchInput" placeholder="Search news..." aria-label="Search news">
+    <button id="bookmarkBtn" title="View Bookmarks" aria-label="View Bookmarks">
+      🔖 <span id="bookmarkCount" class="visually-hidden"></span>
+    </button>
+    <button id="darkModeToggle" title="Toggle Dark Mode" aria-label="Toggle Dark Mode">🌙</button>
+  </header>
+  <div id="scrollingAd" class="scrolling-ad" role="region" aria-label="NewsBox Announcements">
+    <button id="closeAd" aria-label="Close announcement" class="close-ad">×</button>
+    <div class="scrolling-ad-content">
+      <span><span class="ad-icon">🔥</span> Get the latest updates on NewsBox! <span class="ad-icon">| 🚀</span> Advertise with us! <span class="ad-icon">| 🌟</span> Stay informed, stay ahead! <span class="ad-icon">🔔</span></span>
+    </div>
+  </div>
+  <nav id="categoryNav" aria-label="News categories">
+    <button class="category-tab active" aria-label="Sports category">Sports</button>
+    <button class="category-tab" aria-label="World Wide category">World Wide</button>
+    <button class="category-tab" aria-label="Health category">Health</button>
+    <button class="category-tab" aria-label="Science category">Science</button>
+    <button class="category-tab" aria-label="Education category">Education</button>
+    <button class="category-tab" aria-label="New Trends category">New Trends</button>
+  </nav>
+  <main>
+    <section id="articleList" aria-live="polite">
+      <!-- Article cards will be rendered here -->
+    </section>
+    <div id="articleModal" class="modal" aria-modal="true" role="dialog" tabindex="-1">
+      <div class="modal-content">
+        <button id="closeModal" class="close-modal" aria-label="Close article details">×</button>
+        <img id="modalImg" class="modal-img" src="" alt="" loading="lazy" />
+        <h2 id="modalTitle"></h2>
+        <div id="modalMeta" class="modal-meta"></div>
+        <div id="modalSummary" class="modal-summary"></div>
+      </div>
+    </div>
+    <div id="errorPanel" class="hidden" role="alert" aria-live="assertive">
+      <p id="errorMessage"></p>
+      <button id="retryButton">Retry</button>
+    </div>
+    <aside id="bookmarkPanel" class="hidden" aria-label="Bookmarked Articles">
+      <button id="closeBookmarkPanel" aria-label="Close Bookmarks">×</button>
+      <h2>Bookmarked Articles</h2>
+      <div id="bookmarkList"></div>
+    </aside>
+    <div id="toast" class="hidden" role="status" aria-live="polite"></div>
+    <div id="loader" class="hidden"></div>
+  </main>
+  <footer>
+    <hr class="footer-divider" />
+    <div class="footer-links">
+      <a href="mailto:koushik@email.com" aria-label="Email"><img src="https://img.icons8.com/ios-filled/24/1a237e/new-post.png" alt="Email"/></a>
+      <a href="https://github.com/koushik" target="_blank" rel="noopener" aria-label="GitHub"><img src="https://img.icons8.com/ios-filled/24/1a237e/github.png" alt="GitHub"/></a>
+      <a href="https://linkedin.com/in/koushik" target="_blank" rel="noopener" aria-label="LinkedIn"><img src="https://img.icons8.com/ios-filled/24/1a237e/linkedin.png" alt="LinkedIn"/></a>
+    </div>
+    <p class="footer-credit"><span class="footer-heart">❤️</span> Made with love by <strong>Koushik</strong> &mdash; &copy; 2024</p>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
